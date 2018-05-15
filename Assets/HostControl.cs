@@ -91,6 +91,7 @@ public class HostControl : NetworkBehaviour {
                     success = true;
                 }
             }
+            player.toldDetective = false;
             player.isDead = false;
             player.gameOver = false;
 

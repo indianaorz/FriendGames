@@ -28,6 +28,7 @@ public class PlayerControl : NetworkBehaviour
     Color aliveColor;
     public Color deadColor;
 
+    
     public bool inspected = false;
 
     [SyncVar]

@@ -92,11 +92,29 @@ public class HostControl : NetworkBehaviour {
                 }
             }
             player.toldDetective = false;
+            player.inspected = false;
             player.isDead = false;
             player.gameOver = false;
 
         }
+        RpcResetGame();
         gameStarted = true;
+    }
+
+    [ClientRpc]
+    void RpcResetGame()
+    {
+
+        PlayerControl[] players = GameObject.FindObjectsOfType<PlayerControl>();
+        foreach (PlayerControl player in players)
+        {
+
+            player.toldDetective = false;
+            player.inspected = false;
+            player.isDead = false;
+            player.gameOver = false;
+
+        }
     }
 
     [Command]
